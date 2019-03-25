@@ -2,11 +2,11 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	chrome.tabs.sendMessage(tab.id, { text: "report_back" }, sendToClipbord);
 });
 
-function sendToClipbord(myString) {
+function sendToClipbord(string) {
 	var input = document.createElement('textarea');
 
 	document.body.appendChild(input);
-	input.value = myString;
+	input.value = string;
 	input.focus();
 	input.select();
 

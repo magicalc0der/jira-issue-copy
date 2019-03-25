@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 1,
     "version": "1.0",
-    "name": "Jira Issue EasyCopy",
+    "name": "Jira Issue Copy",
     "permissions": [
         "activeTab"
     ],
@@ -24,9 +24,9 @@
             ]
         }
     ],
-    "icons": { 
+    "icons": {
         "16": "icon16.png",
         "48": "icon48.png",
-        "128": "icon128.png" 
+        "128": "icon128.png"
     }
 }
