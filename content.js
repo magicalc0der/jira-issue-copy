@@ -1,6 +1,12 @@
-chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
-	var issueNumber = document.getElementById("issuekey-val").textContent;
-	var issueDescription = document.getElementById("summary-val").textContent;
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	if ( request.action === 'copy' ) {
+    var numberEl = document.getElementById("issuekey-val");
+    var titleEl = document.getElementById("summary-val");
 
-	sendResponse(issueNumber + " " + issueDescription);
+    if ( numberEl !== null && titleEl !== null ) {
+      var issueNumber = numberEl.textContent;
+      var issueDescription = titleEl.textContent;
+      sendResponse(issueNumber + " " + issueDescription);
+    }
+  }
 });

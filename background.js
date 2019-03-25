@@ -1,5 +1,5 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.tabs.sendMessage(tab.id, { text: "report_back" }, sendToClipbord);
+	chrome.tabs.sendMessage(tab.id, { action: "copy" }, sendToClipbord);
 });
 
 function sendToClipbord(string) {
