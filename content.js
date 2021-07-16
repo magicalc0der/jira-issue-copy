@@ -3,8 +3,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     var titleEl = document.title;
 
     if (titleEl !== null) {
-      titleEl=titleEl.replace(/\s+/g,"_");
-      sendResponse(titleEl);
+      sendResponse(titleEl.replace(/\s+/g,"_").replace(/\[/g, '').replace(/\]/g, ''));
     }
   }
 });
